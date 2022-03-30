@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class StepTracker {
 
-    public static int[][] monthToData = new int[12][30];// [месяц][день]
+    private static int[][] monthToData = new int[12][30];// [месяц][день]
     private int Month;
     private int goalSteps = 10000;
     private int sumSteps;

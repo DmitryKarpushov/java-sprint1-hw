@@ -1,6 +1,6 @@
 public class Converter {
-    static final double STEP =0.00075;
-    static final int CALORIE_STEP=50;
+    private static final double STEP =0.00075;
+    private static final int CALORIE_STEP=50;
 
 
     public static double convertKM(int sumSteps) {
