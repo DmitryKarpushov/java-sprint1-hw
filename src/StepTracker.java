@@ -3,13 +3,19 @@ import java.util.Scanner;
 public class StepTracker {
 
     public static int[][] monthToData = new int[12][30];// [месяц][день]
-    int Month;
-    int goalSteps = 10000;
-    int sumSteps = 0;
-    int average = 0;
-    Converter converter = new Converter();
+    private int Month;
+    private int goalSteps = 10000;
+    private int sumSteps;
+    private int average;
+    private Converter converter = new Converter();
+    //Исправление
+    private Scanner scanner;
+    public StepTracker(Scanner scanner) {
+        this.scanner = scanner;
+    }
 
-    void setStepTr(Scanner scanner) {
+
+    void setStepTr() {
         System.out.println("Введите цель по количеству шагов за день");
         int numberSteps = scanner.nextInt();
         if (numberSteps >= 0) {
@@ -21,7 +27,7 @@ public class StepTracker {
 
     }
 
-    void saveDaySteps(Scanner scanner) {
+    void saveDaySteps() {
         System.out.println("Введите месяц(начинаем с нуля) : ");
         Month = scanner.nextInt();
         System.out.println("Введите день(начинаем с нуля) : ");
@@ -36,7 +42,7 @@ public class StepTracker {
         }
     }
 
-    void statisticSteps(Scanner scanner) {
+    void statisticSteps() {
         System.out.println("Укажите месяц за который хотите увидеть статистику: ");
         Month = scanner.nextInt();
 
@@ -68,7 +74,7 @@ public class StepTracker {
 //      String result = String.format("%.2f",(sumSteps / average));
         if (sumSteps != 0 && average != 0) {
             System.out.println("Среднее количество шагов: " + (sumSteps / average));
-        }else{
+        } else {
             System.out.println("Среднее количество шагов: 0");
         }
         //------------------------------------------------------------------------------------------------

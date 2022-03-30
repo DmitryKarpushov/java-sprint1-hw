@@ -4,23 +4,24 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         printMenu(); //для вывода один раз (так же идея выводить меню по выбору пользолателя)
-        StepTracker stepTracker = new StepTracker();
+        StepTracker stepTracker = new StepTracker(scanner);
 
         while (true) {
             //printMenu(); //для вывода меню после каждого действия
             int command = scanner.nextInt();
             switch (command) {
                 case 1:
-                    stepTracker.saveDaySteps(scanner);
+                    stepTracker.saveDaySteps();
                     break;
                 case 2:
-                    stepTracker.statisticSteps(scanner);
+                    stepTracker.statisticSteps();
                     break;
                 case 3:
-                    stepTracker.setStepTr(scanner);
+                    stepTracker.setStepTr();
                     break;
                 case 4:
                     System.out.println("Выход из приложения!");
+                    scanner.close();
                     return;
                 case 5:
                     printMenu();
